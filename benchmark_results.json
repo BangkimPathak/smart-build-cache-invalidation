@@ -1,0 +1,34 @@
+[
+  {
+    "scenario": "Scenario 1: Cold Build",
+    "description": "Initial run with empty cache store",
+    "cache_status": "CACHE_MISS",
+    "matched_key": "None",
+    "elapsed_seconds": 3.005,
+    "speedup_factor": "1.00x (Baseline)"
+  },
+  {
+    "scenario": "Scenario 2: Warm Build",
+    "description": "Re-run without modifying files",
+    "cache_status": "EXACT_HIT",
+    "matched_key": "win32-py3.13-build-c62d9fbca225638b-c4ad29c81487af70",
+    "elapsed_seconds": 0.018,
+    "speedup_factor": "164.5x Faster"
+  },
+  {
+    "scenario": "Scenario 3: Code Modification",
+    "description": "Source edited; dependencies reused via fallback restore-key",
+    "cache_status": "RESTORE_HIT",
+    "matched_key": "win32-py3.13-build-c62d9fbca225638b-c4ad29c81487af70",
+    "elapsed_seconds": 0.575,
+    "speedup_factor": "5.2x Faster"
+  },
+  {
+    "scenario": "Scenario 4: Manifest Updated",
+    "description": "requirements.txt modified; dependency cache invalidated",
+    "cache_status": "RESTORE_HIT",
+    "matched_key": "win32-py3.13-build-c62d9fbca225638b-734a20a00cf3a561",
+    "elapsed_seconds": 3.115,
+    "speedup_factor": "0.97x (Rebuilt)"
+  }
+]
